@@ -1,6 +1,7 @@
 package com.gerenciador.financeiro.transporte.carga;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -16,10 +17,10 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
 import com.gerenciador.financeiro.transporte.carga.cenario.DetalheTransporteBuilder;
-import com.gerenciador.financeiro.transporte.carga.exception.CustoCargaTransportadaException;
+import com.gerenciador.financeiro.transporte.carga.cenario.DetalheTransporteErrado;
+import com.gerenciador.financeiro.transporte.carga.exception.ApiErrorResponse;
 import com.gerenciador.financeiro.transporte.carga.mensagem.Mensagem;
 import com.gerenciador.financeiro.transporte.carga.pojo.DetalheTransporte;
-import com.gerenciador.financeiro.transporte.carga.service.CustoTransporteCargaService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
@@ -34,8 +35,6 @@ public class CustoTransporteCargaServiceTests {
 	
 	@Autowired
 	private Mensagem mensagem;
-
-	private CustoTransporteCargaService custoTransporteCargaService;
 
 	@Test
 	public void testTransporteRodoviaPavimentaENaoPavimentadaComCaminhaoBauSemCargaExtra() {
@@ -139,12 +138,12 @@ public class CustoTransporteCargaServiceTests {
 	
 	@Test
 	public void testErroInterno() {
-		DetalheTransporte detalheTransporte = DetalheTransporteBuilder
+		DetalheTransporteErrado detalheTransporte = DetalheTransporteBuilder
 				.criarErroInterno();
 		MultiValueMap<String, Object> detalheTransporteMap = new LinkedMultiValueMap<String, Object>();
 		detalheTransporteMap.add(CHAVE_DETALHE_TRANSPORTE, detalheTransporte);
-		String erro = restTemplate.postForObject(URL_CALCULAR_CUSTO_TRANSPORTE, detalheTransporte, String.class);
-		System.out.println(erro);
+		ApiErrorResponse erro = restTemplate.postForObject(URL_CALCULAR_CUSTO_TRANSPORTE, detalheTransporte, ApiErrorResponse.class);
+		assertEquals(mensagem.erroInterno(), erro.getMessage());
 	}
 	
 }

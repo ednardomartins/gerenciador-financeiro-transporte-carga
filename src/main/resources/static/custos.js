@@ -32,7 +32,7 @@ app.controller("CustoTransporteCargaController", function($scope, $http) {
     function _loadComboVeiculos() {
         $http({
             method: 'GET',
-            url: '/veiculos'
+            url: '/veiculo'
         }).then(
             function(res) { // success
                 $scope.veiculos = res.data;

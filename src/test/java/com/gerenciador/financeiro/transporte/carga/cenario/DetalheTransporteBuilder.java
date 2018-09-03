@@ -96,11 +96,11 @@ public class DetalheTransporteBuilder {
 		return detalheTransporte;
 	}
 	
-	public static DetalheTransporte criarErroInterno(){
-		DetalheTransporte detalheTransporte  = new DetalheTransporte();
+	public static DetalheTransporteErrado criarErroInterno(){
+		DetalheTransporteErrado detalheTransporte  = new DetalheTransporteErrado();
 		detalheTransporte.setDistanciaRodoviaPavimentada(-340000);
 		detalheTransporte.setDistanciaRodoviaNaoPavimentada(-340000);
-		detalheTransporte.setVeiculoUtilizado(VeiculoEnum.CAMINHAO_BAU.getCodigo());
+		detalheTransporte.setVeiculoUtilizado("Teste");
 		detalheTransporte.setCargaTransportada(4);
 		return detalheTransporte;
 	}

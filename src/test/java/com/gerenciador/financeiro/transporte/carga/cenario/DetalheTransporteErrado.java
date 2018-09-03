@@ -1,10 +1,10 @@
-package com.gerenciador.financeiro.transporte.carga.pojo;
+package com.gerenciador.financeiro.transporte.carga.cenario;
 
-public class DetalheTransporte {
+public class DetalheTransporteErrado {
 
 	private Integer distanciaRodoviaPavimentada;
 	private Integer distanciaRodoviaNaoPavimentada;
-	private Integer veiculoUtilizado;
+	private String veiculoUtilizado;
 	private Integer cargaTransportada;
 
 	public Integer getDistanciaRodoviaPavimentada() {
@@ -23,11 +23,11 @@ public class DetalheTransporte {
 		this.distanciaRodoviaNaoPavimentada = distanciaRodoviaNaoPavimentada;
 	}
 
-	public Integer getVeiculoUtilizado() {
+	public String getVeiculoUtilizado() {
 		return veiculoUtilizado;
 	}
 
-	public void setVeiculoUtilizado(Integer veiculoUtilizado) {
+	public void setVeiculoUtilizado(String veiculoUtilizado) {
 		this.veiculoUtilizado = veiculoUtilizado;
 	}
 

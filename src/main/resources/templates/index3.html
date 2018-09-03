@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="App" xmlns:th="http://www.thymeleaf.org">
+<head>
+ <meta charset="utf-8">
+<script th:src="@{/custos.js}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"></script>
+
+</head>
+ <body ng-app="GerenciadorFinanceiroTransporteCarga" ng-controller="CustoTransporteCargaController">
+ <div class="container">
+   <div id="signup">
+      <div class="signup-screen">
+         <div class="space-bot text-center">
+            <h1>Calular Custo de Carga Transportada</h1>
+           <div class="divider"></div>
+         </div>
+           <form class="form-register"  ng-submit="submitDetalheTransporte()"  novalidate>
+	         <div class="input-field col s6">
+              <input id="distancia-pavimentada" type="text" ng-model="detalheTransporteForm.distanciaRodoviaPavimentada" class="validate" required>
+              <label for="distancia-pavimentada">Distância  em  rodovia  pavimentada</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="distancia-nao-pavimentada" type="text" ng-model="detalheTransporteForm.distanciaRodoviaNaoPavimentada" class="validate" required>
+              <label for="distancia-nao-pavimentada">Distância  em  rodovia  não-pavimentada</label>
+             </div>
+             <div class="input-field col s6">
+              <input id="veiculo-utilizado" type="text" ng-model="detalheTransporteForm.veiculoUtilizado" class="validate" required>
+              <label for="veiculo-utilizado">Veículo utilizado</label>
+              
+              
+             </div>
+             <div class="input-field col s6">
+               <input id="carga" type="text" ng-model="detalheTransporteForm.cargaTransportada"  class="validate" required>
+               <label for="carga">Carga  transportada</label>
+              </div>
+              <p class="alert alert-danger" ng-show="form-register.password.$error.minlength || form.password.$invalid">Your password must be at least 6 characters.</p>
+              <div class="space-top text-center">
+               <input type="submit" value="calcular" class="btn btn-block btn-success"/>
+              </div>
+             </form>
+           </div>
+        </div>
+    </div>
+    <table class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-6"  border="0">
+        <tr>
+           <td></td>
+           <td>Custo {{valor}}</td>
+        </tr>
+     </table>
+</body>
+</html>

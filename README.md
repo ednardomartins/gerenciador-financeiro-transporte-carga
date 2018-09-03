@@ -59,9 +59,9 @@ Docker 17.06.0
 
 ## Gerar a imagem local (Não obrigatorio)
 
-Esse passo nao é necessario ma vez que imagem esta no Docker Hub.
+Esse passo nao é opcional uma vez que imagem esta no Docker Hub.
 
-Se for o desejo gerarlocal basta executar executar :
+Se for o desejo gerar local basta executar executar :
 
 ```
 mvn clean package dockerfile:build

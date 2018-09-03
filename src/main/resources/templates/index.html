@@ -28,7 +28,7 @@
 <body ng-app="GerenciadorFinanceiroTransporteCarga"
 	ng-controller="CustoTransporteCargaController">
 	<div class="container margin-top-80">
-		<div class="panel panel-info" style="min-height:650px;">
+		<div class="panel panel-info" style="min-height:680px;">
 			<div class="panel-heading">Calular Custo de Carga Transportada</div>
 			<!-- Main content -->
 			<form ng-submit="submitDetalheTransporte()" class="ng-pristine">
@@ -38,7 +38,7 @@
 						<td>
 				<fieldset>
 				   <legend><font color="red">{{labelErros}}</font></legend>
-					<div align="center">
+					<div align="left">
 						<font color="red">
 							<li ng-repeat="erro in erros">{{erro}}</li>
 						</font>

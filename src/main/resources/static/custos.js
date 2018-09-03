@@ -1,4 +1,4 @@
-vvar app = angular.module("GerenciadorFinanceiroTransporteCarga", []);
+var app = angular.module("GerenciadorFinanceiroTransporteCarga", []);
  
 app.controller("CustoTransporteCargaController", function($scope, $http) {
 	$scope.valor = "";

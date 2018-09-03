@@ -1,4 +1,4 @@
-var app = angular.module("GerenciadorFinanceiroTransporteCarga", []);
+vvar app = angular.module("GerenciadorFinanceiroTransporteCarga", []);
  
 app.controller("CustoTransporteCargaController", function($scope, $http) {
 	$scope.valor = "";
@@ -45,7 +45,9 @@ app.controller("CustoTransporteCargaController", function($scope, $http) {
     }
   
     function _success(res) {
-         $scope.valor = "Custo Total viagem: " + res.data;
+    	 $scope.erros = [];
+    	 $scope.labelErros ="";
+         $scope.valor = "Custo Total viagem: " + res.data.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
     }
  
     function _error(res) {

@@ -6,6 +6,12 @@
 ## Tecnologias
 
 - [Spring Boot](https://projects.spring.io/spring-boot) é uma ferramenta que simplifica a configuração e execução de aplicações Java stand-alone,  com conceitos de dependências “starters”, auto configuração e servlet container embutidos é proporcionado uma grande produtividade desde o start-up da aplicação até sua ida a produção.
+
+# Demo
+
+Publiquei no Heroku a app
+
+https://custotransporteapp.herokuapp.com/
  
 # Setup da aplicação (local)
 

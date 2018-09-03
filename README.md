@@ -2,49 +2,87 @@
 
 [![Build Status](https://travis-ci.org/codecentric/springboot-sample-app.svg?branch=master)](https://travis-ci.org/codecentric/springboot-sample-app)
 [![Coverage Status](https://s3.amazonaws.com/assets.coveralls.io/badges/coveralls_90.svg)](https://s3.amazonaws.com/assets.coveralls.io/badges/coveralls_90.svg)
-[![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-Minimal [Spring Boot](http://projects.spring.io/spring-boot/) sample app.
+## Tecnologias
 
-## Requirements
+- [Spring Boot](https://projects.spring.io/spring-boot) é uma ferramenta que simplifica a configuração e execução de aplicações Java stand-alone,  com conceitos de dependências “starters”, auto configuração e servlet container embutidos é proporcionado uma grande produtividade desde o start-up da aplicação até sua ida a produção.
+ 
+- [Spring MVC](https://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html) é um framework já consolidado no mercado, que a partir da versão fornece mecanismos simplificados para a criação de APIs RESTful através de anotação, além disso, também possui recursos de serialização e deserialização de objetos de forma transparente 
+ 
+- [Spring Data](http://projects.spring.io/spring-data/) é um framework que abstrai o acesso ao modelo de dados, independente a tecnologia de base de dados.
 
-For building and running the application you need:
+ 
+# Setup da aplicação (local)
 
-- [JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-- [Maven 3](https://maven.apache.org)
+## Pré-requisito
 
-## Running the application locally
+Antes de rodar a aplicação é preciso garantir que as seguintes dependências estejam corretamente instaladas:
+```
+Java 8
+Maven 3.3.3 
+```
 
-There are several ways to run a Spring Boot application on your local machine. One way is to execute the `main` method in the `de.codecentric.springbootsample.Application` class from your IDE.
+## Instalação da aplicação
 
-Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html) like so:
-
-```shell
+Primeiramente, faça o clone do repositório:
+```
+https://github.com/ednardomartins/gerenciador-financeiro-transporte-carga.git
+```
+Feito isso, acesse o projeto:
+```
+cd gerenciador-financeiro-transporte
+```
+É preciso compilar o código e baixar as dependências do projeto:
+```
+mvn clean package ou ./mvnw clean package
+```
+Finalizado esse passo, vamos iniciar a aplicação:
+```
 mvn spring-boot:run
 ```
-
-## Deploying the application to OpenShift
-
-The easiest way to deploy the sample application to OpenShift is to use the [OpenShift CLI](https://docs.openshift.org/latest/cli_reference/index.html):
-
-```shell
-oc new-app codecentric/springboot-maven3-centos~https://github.com/codecentric/springboot-sample-app
+Pronto. A aplicação está disponível em http://localhost:8080
+```
+Tomcat started on port(s): 8080 (http)
+Started AppConfig in xxxx seconds (JVM running for xxxx)
 ```
 
-This will create:
+# Setup da aplicação com docker
 
-* An ImageStream called "springboot-maven3-centos"
-* An ImageStream called "springboot-sample-app"
-* A BuildConfig called "springboot-sample-app"
-* DeploymentConfig called "springboot-sample-app"
-* Service called "springboot-sample-app"
+## Pré-requisito
 
-If you want to access the app from outside your OpenShift installation, you have to expose the springboot-sample-app service:
+Antes de rodar a aplicação é preciso garantir que as seguintes dependências estejam corretamente instaladas:
 
-```shell
-oc expose springboot-sample-app --hostname=www.example.com
+```
+Docker 17.06.0 
 ```
 
-## Copyright
+## Gerar a imagem local (Não obrigatorio)
 
-Released under the Apache License 2.0. See the [LICENSE](https://github.com/codecentric/springboot-sample-app/blob/master/LICENSE) file.
+Esse passo nao é necessario ma vez que imagem esta no Docker Hub.
+
+Se for o desejo gerarlocal basta executar executar :
+
+```
+mvn clean package dockerfile:build
+```
+
+## Instalação da aplicação
+
+
+Executar container da aplicação
+
+```
+docker run -it \
+    -p 8080:8080 \
+    ednardo/custo-transporte-app 
+```
+
+Pronto. A aplicação está disponível em http://localhost:8080
+
+# APIs
+
+Segue abaixo as APIs disponíveis no projeto:
+
+ - /calcularCustoTransporte (POST)
+ - /veiculo (GET)
+ 

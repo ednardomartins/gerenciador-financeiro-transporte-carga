@@ -1,4 +1,4 @@
-package com.gerenciador.financeiro.transporte.carga.service.strategy;
+package com.gerenciador.financeiro.transporte.carga.service.fatorveiculo;
 
 import java.math.BigDecimal;
 

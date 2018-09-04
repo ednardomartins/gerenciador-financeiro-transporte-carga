@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gerenciador.financeiro.transporte.carga.exception.CustoCargaTransportadaException;
 import com.gerenciador.financeiro.transporte.carga.pojo.DetalheTransporte;
 import com.gerenciador.financeiro.transporte.carga.pojo.Veiculo;
 import com.gerenciador.financeiro.transporte.carga.service.CustoTransporteCargaService;

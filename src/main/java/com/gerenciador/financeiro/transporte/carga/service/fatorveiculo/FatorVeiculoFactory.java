@@ -1,9 +1,9 @@
-package com.gerenciador.financeiro.transporte.carga.service.strategy;
+package com.gerenciador.financeiro.transporte.carga.service.fatorveiculo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.gerenciador.financeiro.transporte.carga.cenario.VeiculoEnum;
+import com.gerenciador.financeiro.transporte.carga.pojo.VeiculoEnum;
 
 @Component
 public class FatorVeiculoFactory {

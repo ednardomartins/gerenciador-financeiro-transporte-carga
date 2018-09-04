@@ -3,6 +3,7 @@ package com.gerenciador.financeiro.transporte.carga.cenario;
 import java.math.BigDecimal;
 
 import com.gerenciador.financeiro.transporte.carga.pojo.DetalheTransporte;
+import com.gerenciador.financeiro.transporte.carga.pojo.VeiculoEnum;
 
 public class DetalheTransporteBuilder {
 	

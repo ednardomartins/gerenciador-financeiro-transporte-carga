@@ -11,8 +11,8 @@ import org.springframework.stereotype.Component;
 import com.gerenciador.financeiro.transporte.carga.exception.DadosInvalidosExceptionException;
 import com.gerenciador.financeiro.transporte.carga.mensagem.Mensagem;
 import com.gerenciador.financeiro.transporte.carga.pojo.DetalheTransporte;
-import com.gerenciador.financeiro.transporte.carga.service.strategy.FatorVeiculo;
-import com.gerenciador.financeiro.transporte.carga.service.strategy.FatorVeiculoFactory;
+import com.gerenciador.financeiro.transporte.carga.service.fatorveiculo.FatorVeiculo;
+import com.gerenciador.financeiro.transporte.carga.service.fatorveiculo.FatorVeiculoFactory;
 
 @Component
 public class CustoTransporteCargaService {

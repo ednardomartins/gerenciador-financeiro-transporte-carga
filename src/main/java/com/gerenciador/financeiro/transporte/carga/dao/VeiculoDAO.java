@@ -7,9 +7,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import com.gerenciador.financeiro.transporte.carga.cenario.VeiculoEnum;
 import com.gerenciador.financeiro.transporte.carga.exception.CustoCargaTransportadaException;
 import com.gerenciador.financeiro.transporte.carga.pojo.Veiculo;
+import com.gerenciador.financeiro.transporte.carga.pojo.VeiculoEnum;
 
 @Component
 public class VeiculoDAO {

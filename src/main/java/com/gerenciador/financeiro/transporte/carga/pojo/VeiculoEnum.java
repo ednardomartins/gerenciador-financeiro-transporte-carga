@@ -1,11 +1,11 @@
-package com.gerenciador.financeiro.transporte.carga.cenario;
+package com.gerenciador.financeiro.transporte.carga.pojo;
 
 import java.math.BigDecimal;
 
 public enum VeiculoEnum {
-	CAMINHAO_BAU(1, "Caminhão baú",BigDecimal.valueOf(1.00).setScale(2, BigDecimal.ROUND_UP)),
-	CAMINHAO_CACAMBA(2, "Caminhão caçamba",BigDecimal.valueOf(1.05).setScale(2, BigDecimal.ROUND_UP)),
-	CARRETA(3, "Carreta",BigDecimal.valueOf(1.12).setScale(2, BigDecimal.ROUND_UP));
+	CAMINHAO_BAU(1, "Caminhão baú",BigDecimal.valueOf(1.00).setScale(2, BigDecimal.ROUND_DOWN)),
+	CAMINHAO_CACAMBA(2, "Caminhão caçamba",BigDecimal.valueOf(1.05).setScale(2, BigDecimal.ROUND_DOWN)),
+	CARRETA(3, "Carreta",BigDecimal.valueOf(1.12).setScale(2, BigDecimal.ROUND_DOWN));
 	
 	private Integer codigo;
 	private String nome;

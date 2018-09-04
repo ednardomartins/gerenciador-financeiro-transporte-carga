@@ -48,7 +48,7 @@
 					<legend>Distância em rodovia pavimentada</legend>
 					<div class="form-group">
 						<label>Valor em KM</label> <input  ng-model="detalheTransporteForm.distanciaRodoviaPavimentada" class="form-control"
-							 type="text">
+							 type="text" numbers-only >
 					</div>
 				</fieldset>
 				<fieldset>
@@ -56,7 +56,7 @@
 					<div class="form-group">
 						<label>Valor em KM</label> <input class="form-control"
 						ng-model="detalheTransporteForm.distanciaRodoviaNaoPavimentada" 
-							 type="text">
+							 type="text" numbers-only >
 					</div>
 				</fieldset>
 				<fieldset>
@@ -73,7 +73,7 @@
 					<div class="form-group">
 						<input class="form-control"
 						 ng-model="detalheTransporteForm.cargaTransportada" 
-							 type="text" >
+							 type="text" numbers-only >
 					</div>
 				</fieldset>
 				<fieldset>

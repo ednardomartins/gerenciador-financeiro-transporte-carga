@@ -11,7 +11,7 @@
 
 Publiquei no Heroku a app
 
-https://custotransporteapp.herokuapp.com/
+https://sheltered-fortress-96535.herokuapp.com/
  
 # Setup da aplicação (local)
 
